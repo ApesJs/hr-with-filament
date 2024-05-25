@@ -2,10 +2,14 @@ models:
   Department:
     name: string
     description: text nullable
+    relationships:
+      hasMany: Employee
 
   Position:
     name: string
     description: text nullable
+    relationships:
+      hasMany: Employee
 
   Employee:
     department_id: foreign
@@ -14,6 +18,8 @@ models:
     email: string
     joined: date
     status: string
+    relationships:
+      hasMany: LeaveRequest, Salary
 
   LeaveRequest:
     employee_id: foreign
