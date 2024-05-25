@@ -1,0 +1,32 @@
+models:
+  Department:
+    name: string
+    description: text nullable
+
+  Position:
+    name: string
+    description: text nullable
+
+  Employee:
+    department_id: foreign
+    position_id: foreign
+    name: string
+    email: string
+    joined: date
+    status: string
+
+  LeaveRequest:
+    employee_id: foreign
+    start_date: date
+    end_date: date
+    type: string
+    status: string
+    reason: text nullable
+
+  Salary:
+    employee_at: foreign
+    amount: integer
+    effective_date: date
+
+controllers:
+  # ...
